@@ -14,14 +14,19 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic/js/angular/angular-resource.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/services.js"></script>
+    <script src="js/controllers/HomeCtrl.js"></script>
+    <script src="js/controllers/LocationsCtrl.js"></script>
+    <script src="js/controllers/SettingsCtrl.js"></script>
+    <script src="js/services/CitiesService.js"></script>
+    <script src="js/services/DataStoreService.js"></script>
+    <script src="js/services/WeatherService.js"></script>
   </head>
   <body ng-app="starter">
     <!--
