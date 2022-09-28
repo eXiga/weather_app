@@ -1,4 +1,5 @@
 import { Text, View } from "react-native";
+import Theme from "../Design";
 
 export default function HomeScreen() {
   return (
@@ -7,7 +8,7 @@ export default function HomeScreen() {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "rgba(255, 255, 251, 1)",
+        backgroundColor: Theme.backgroundColor,
       }}
     >
       <Text>Home!</Text>
