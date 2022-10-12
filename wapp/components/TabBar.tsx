@@ -1,10 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign } from "@expo/vector-icons";
-import HomeScreen from "../screens/Home";
-import FavoritesScreen from "../screens/Favorites";
-import SettingsScreen from "../screens/Settings";
-import Theme from "../Design";
+import HomeScreen from "../pages/Home";
+import FavoritesScreen from "../pages/Favorites";
+import SettingsScreen from "../pages/Settings";
+import Theme from "./Design";
 
 type IconName = keyof typeof AntDesign.glyphMap;
 

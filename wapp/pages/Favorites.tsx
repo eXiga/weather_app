@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import Theme from "../Design";
+import Theme from "../components/Design";
 
 export default function FavoritesScreen() {
   return (
