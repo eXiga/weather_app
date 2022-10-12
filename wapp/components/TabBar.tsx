@@ -4,7 +4,7 @@ import { AntDesign } from "@expo/vector-icons";
 import HomeScreen from "../pages/Home";
 import FavoritesScreen from "../pages/Favorites";
 import SettingsScreen from "../pages/Settings";
-import Theme from "./Design";
+import Theme from "../design/Design";
 
 type IconName = keyof typeof AntDesign.glyphMap;
 
