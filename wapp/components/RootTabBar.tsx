@@ -25,7 +25,7 @@ function tabBarIcon(route: string): IconName {
   return iconName;
 }
 
-export default function TabBar() {
+export default function RootTabBar() {
   return (
     <NavigationContainer>
       <Tab.Navigator

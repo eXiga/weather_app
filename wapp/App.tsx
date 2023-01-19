@@ -1,6 +1,5 @@
-import { Text, View } from "react-native";
-import TabBar from "./components/TabBar";
+import RootTabBar from "./components/RootTabBar";
 
 export default function App() {
-  return <TabBar />;
+  return <RootTabBar />;
 }
