@@ -1,41 +1,27 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { AntDesign } from "@expo/vector-icons";
-import HomeScreen from "../pages/Home";
-import FavoritesScreen from "../pages/Favorites";
-import SettingsScreen from "../pages/Settings";
-import Theme from "../design/Design";
 
-type IconName = keyof typeof AntDesign.glyphMap;
+import Theme from "../design/Design";
+import TabBarIcon from "./TabBarIcon";
 
 const Tab = createBottomTabNavigator();
-
-function tabBarIcon(route: string): IconName {
-  let iconName: IconName;
-  if (route === "Home") {
-    iconName = "home";
-  } else if (route === "Settings") {
-    iconName = "swap";
-  } else if (route === "Favorites") {
-    iconName = "hearto";
-  } else {
-    iconName = "meh";
-  }
-
-  return iconName;
+interface RootTabBarProps {
+  pages: [string, () => JSX.Element][];
 }
 
-export default function RootTabBar() {
+export default function RootTabBar(props: RootTabBarProps) {
   return (
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, size }) => {
             return (
-              <AntDesign
-                name={tabBarIcon(route.name)}
+              <TabBarIcon
+                route={route.name}
+                focused={focused}
                 size={size}
-                color={focused ? Theme.primary : Theme.secondary}
+                activeColor={Theme.primary}
+                inactiveColor={Theme.secondary}
               />
             );
           },
@@ -48,9 +34,9 @@ export default function RootTabBar() {
           tabBarShowLabel: false,
         })}
       >
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Favorites" component={FavoritesScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        {props.pages.map((page) => {
+          return <Tab.Screen key={page[0]} name={page[0]} children={page[1]} />;
+        })}
       </Tab.Navigator>
     </NavigationContainer>
   );
