@@ -7,11 +7,12 @@ import TabBarIcon from "./TabBarIcon";
 const Tab = createBottomTabNavigator();
 interface RootTabBarProps {
   pages: [string, () => JSX.Element][];
+  onLayout: () => void;
 }
 
 export default function RootTabBar(props: RootTabBarProps) {
   return (
-    <NavigationContainer>
+    <NavigationContainer onReady={props.onLayout}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, size }) => {
