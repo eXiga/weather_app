@@ -1,10 +1,8 @@
 import { useCallback } from "react";
-import { RootTabBar } from "./components";
-import HomeScreen from "./pages/Home";
-import FavoritesScreen from "./pages/Favorites";
-import SettingsScreen from "./pages/Settings";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import { RootTabBar } from "./components";
+import { SettingsScreen, FavoritesScreen, HomeScreen } from "./pages";
 
 SplashScreen.preventAutoHideAsync();
 

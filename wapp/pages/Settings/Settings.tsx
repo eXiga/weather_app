@@ -3,9 +3,9 @@ import {
   createStackNavigator,
   StackNavigationProp,
 } from "@react-navigation/stack";
-import Theme from "../design/Design";
+import Theme from "../../design/Design";
 import { useNavigation } from "@react-navigation/native";
-import { SettingsButton } from "../components";
+import { SettingsButton } from "../../components";
 
 type SettingsScreens = {
   Main: undefined;
