@@ -1,6 +1,14 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@hooks/*": ["hooks/*"],
+      "@utils/*": ["utils/*"],
+      "@components": ["components/index"],
+      "@pages": ["pages/index"],
+      "@atoms": ["atoms/index"]
+    }
   }
 }
