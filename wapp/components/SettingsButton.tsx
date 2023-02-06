@@ -4,6 +4,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 interface SettingsButtonProps {
   title: string;
   value: string;
+  shouldShowNavigationImage: boolean;
   onPress: () => void;
 }
 
@@ -14,7 +15,13 @@ export default function SettingsButton(props: SettingsButtonProps) {
         <Text style={styles.title}>{props.title}</Text>
         <View style={styles.valueContainer}>
           <Text style={styles.value}>{props.value}</Text>
-          <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />
+          {props.shouldShowNavigationImage && (
+            <MaterialIcons
+              name="keyboard-arrow-right"
+              size={24}
+              color="black"
+            />
+          )}
         </View>
       </View>
     </Pressable>
