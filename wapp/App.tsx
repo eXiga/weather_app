@@ -1,8 +1,9 @@
 import { useCallback } from "react";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { RootTabBar } from "./components";
-import { SettingsScreen, FavoritesScreen, HomeScreen } from "./pages";
+
+import { RootTabBar } from "@components";
+import { SettingsScreen, FavoritesScreen, HomeScreen } from "@pages";
 
 SplashScreen.preventAutoHideAsync();
 

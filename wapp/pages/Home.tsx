@@ -1,14 +1,16 @@
+import useTheme from "../hooks/useTheme";
 import { Text, View } from "react-native";
-import Theme from "../design/Design";
 
 export default function HomeScreen() {
+  const theme = useTheme();
+
   return (
     <View
       style={{
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: Theme.backgroundColor,
+        backgroundColor: theme.colors.backgroundColor,
       }}
     >
       <Text>Home!</Text>

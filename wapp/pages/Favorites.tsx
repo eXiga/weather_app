@@ -1,17 +1,26 @@
-import { Text, View } from "react-native";
-import Theme from "../components/Design";
+import useTheme from "../hooks/useTheme";
+import { Text, View, StyleSheet } from "react-native";
+import WeatherPreview from "../components/WeatherPreview";
 
 export default function FavoritesScreen() {
+  const theme = useTheme();
+
   return (
     <View
       style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: Theme.backgroundColor,
+        ...styles.container,
+        backgroundColor: theme.colors.backgroundColor,
       }}
     >
-      <Text>Favorites!</Text>
+      <WeatherPreview />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});

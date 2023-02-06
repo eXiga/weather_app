@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import Theme from "../design/Design";
+import useTheme from "@hooks/useTheme";
 import TabBarIcon from "./TabBarIcon";
 
 const Tab = createBottomTabNavigator();
@@ -11,6 +11,8 @@ interface RootTabBarProps {
 }
 
 export default function RootTabBar(props: RootTabBarProps) {
+  const theme = useTheme();
+
   return (
     <NavigationContainer onReady={props.onLayout}>
       <Tab.Navigator
@@ -21,14 +23,14 @@ export default function RootTabBar(props: RootTabBarProps) {
                 route={route.name}
                 focused={focused}
                 size={size}
-                activeColor={Theme.primary}
-                inactiveColor={Theme.secondary}
+                activeColor={theme.colors.primary}
+                inactiveColor={theme.colors.secondary}
               />
             );
           },
           headerShown: false,
           tabBarStyle: {
-            backgroundColor: Theme.backgroundColor,
+            backgroundColor: theme.colors.backgroundColor,
             borderTopWidth: 0,
             position: "absolute",
           },
