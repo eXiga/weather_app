@@ -2,15 +2,19 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import useTheme from "@hooks/useTheme";
-import TabBarIcon from "./TabBarIcon";
+import { TabBarIcon } from "@components";
+
+import SettingsScreen from "./Settings/_layout";
+import FavoritesScreen from "./Favorites/Favorites";
+import HomeScreen from "./Home/Home";
 
 const Tab = createBottomTabNavigator();
+
 interface RootTabBarProps {
-  pages: [string, () => JSX.Element][];
   onLayout: () => void;
 }
 
-export default function RootTabBar(props: RootTabBarProps) {
+export default function AppLayout(props: RootTabBarProps) {
   const theme = useTheme();
 
   return (
@@ -37,9 +41,9 @@ export default function RootTabBar(props: RootTabBarProps) {
           tabBarShowLabel: false,
         })}
       >
-        {props.pages.map((page) => {
-          return <Tab.Screen key={page[0]} name={page[0]} children={page[1]} />;
-        })}
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Favorites" component={FavoritesScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

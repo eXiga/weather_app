@@ -1,4 +1,4 @@
-import useTheme from "../hooks/useTheme";
+import useTheme from "@hooks/useTheme";
 import { Text, View } from "react-native";
 
 export default function HomeScreen() {
